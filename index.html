@@ -4,9 +4,45 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.min.css">
+  <script src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
   <title>Hoa dành cho Tơ</title>
+  <style>
+    #custom-handle {
+      text-align: center;
+      width: 2em;
+      margin-left: -35%;
+    }
+
+    #slider {
+      height: 50%;
+      margin: 10% 0;
+      left: 95%;
+    }
+  </style>
+  <script>
+    $( function() {
+      var handle = $( "#custom-handle" );
+      $( "#slider" ).slider({
+        create: function() {
+          handle.text( $( this ).slider( "value" ) );
+        },
+        range: "min",
+        animate: true,
+        orientation: "vertical",
+        slide: function( event, ui ) {
+          handle.text( ui.value );
+        }
+      });
+    } );
+  </script>
 </head>
 <body>
-  <p>Chưa biết làm gì tiếp theo. <br>Cứ để tạm ở đây đã.</p>
+  <p>Tạm hôm nay đến đây. <br> Có gì hôm sau lấy ảnh từ clip sửa css bắt event js nữa là ok.</p>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/DCl5QaaG3Us" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <div id="slider">
+    <div id="custom-handle" class="ui-slider-handle"></div>
+  </div>
 </body>
 </html>
